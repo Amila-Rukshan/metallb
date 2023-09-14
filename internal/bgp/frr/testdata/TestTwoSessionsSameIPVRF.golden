@@ -35,7 +35,7 @@ router bgp 100
 
   bgp router-id 10.1.1.254
   neighbor 10.2.2.254 remote-as 200
-  neighbor 10.2.2.254 local-as 100 no-prepend replace-as
+  neighbor 10.2.2.254 local-as 100
   neighbor 10.2.2.254 ebgp-multihop
   neighbor 10.2.2.254 port 179
   neighbor 10.2.2.254 timers 1 1
@@ -59,7 +59,7 @@ router bgp 300 vrf red
 
   bgp router-id 10.3.3.254
   neighbor 10.2.2.254 remote-as 400
-  neighbor 10.2.2.254 local-as 300 no-prepend replace-as
+  neighbor 10.2.2.254 local-as 300
   neighbor 10.2.2.254 ebgp-multihop
   neighbor 10.2.2.254 port 179
   neighbor 10.2.2.254 timers 1 1
