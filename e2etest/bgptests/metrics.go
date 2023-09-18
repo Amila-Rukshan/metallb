@@ -553,14 +553,14 @@ var _ = ginkgo.Describe("BGP metrics", func() {
 						return err
 					}
 
-					// err = metrics.ValidateCounterValue(metrics.GreaterOrEqualThan(1), "metallb_bfd_session_down_events", selector.labelsBFD, speakerMetrics)
-					// if err != nil {
-					// 	return err
-					// }
-					// err = metrics.ValidateOnPrometheus(promPod, fmt.Sprintf(`metallb_bfd_session_down_events{%s} >= 1`, selector.labelsForQueryBFD), metrics.There)
-					// if err != nil {
-					// 	return err
-					// }
+					err = metrics.ValidateCounterValue(metrics.GreaterOrEqualThan(1), "metallb_bfd_session_down_events", selector.labelsBFD, speakerMetrics)
+					if err != nil {
+						return err
+					}
+					err = metrics.ValidateOnPrometheus(promPod, fmt.Sprintf(`metallb_bfd_session_down_events{%s} >= 1`, selector.labelsForQueryBFD), metrics.There)
+					if err != nil {
+						return err
+					}
 				}
 				return nil
 			}, 2*time.Minute, 5*time.Second).ShouldNot(HaveOccurred())

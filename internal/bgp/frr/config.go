@@ -65,6 +65,7 @@ type BFDProfile struct {
 type neighborConfig struct {
 	IPFamily            ipfamily.Family
 	Name                string
+	LocalASN            uint32
 	ASN                 uint32
 	Addr                string
 	SrcAddr             string
