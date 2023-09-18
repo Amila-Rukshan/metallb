@@ -23,7 +23,6 @@ router bgp 100
 
   bgp router-id 10.1.1.254
   neighbor 127:0:0::2 remote-as 200
-  neighbor 127:0:0::2 local-as 100
   neighbor 127:0:0::2 port 179
   neighbor 127:0:0::2 timers 1 1
   neighbor 127:0:0::2 password password
