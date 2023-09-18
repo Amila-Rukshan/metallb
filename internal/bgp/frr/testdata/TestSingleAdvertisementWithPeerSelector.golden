@@ -37,7 +37,7 @@ route-map 10.2.2.254-out permit 4
 route-map 10.2.2.254-out permit 5
   match ipv6 address prefix-list 10.2.2.254-pl-ipv4
 
-router bgp 65535
+router bgp 100
   no bgp ebgp-requires-policy
   no bgp network import-check
   no bgp default ipv4-unicast

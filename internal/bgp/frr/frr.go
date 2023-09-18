@@ -256,6 +256,7 @@ func (sm *sessionManager) createConfig() (*frrConfig, error) {
 			neighbor = &neighborConfig{
 				IPFamily:       family,
 				ASN:            s.PeerASN,
+				LocalASN:       s.MyASN,
 				Addr:           host,
 				Port:           uint16(portUint),
 				HoldTime:       uint64(s.HoldTime / time.Second),

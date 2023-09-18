@@ -52,7 +52,7 @@ route-map 10.2.2.254-red-out permit 2
 route-map 10.2.2.254-red-out permit 3
   match ipv6 address prefix-list 10.2.2.254-red-pl-ipv4
 
-router bgp 65535 vrf blue
+router bgp 100 vrf blue
   no bgp ebgp-requires-policy
   no bgp network import-check
   no bgp default ipv4-unicast
@@ -79,7 +79,7 @@ router bgp 65535 vrf blue
     network 172.16.1.11/24
   exit-address-family
 
-router bgp 65535 vrf red
+router bgp 100 vrf red
   no bgp ebgp-requires-policy
   no bgp network import-check
   no bgp default ipv4-unicast
