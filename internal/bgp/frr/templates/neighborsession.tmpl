@@ -3,7 +3,7 @@
   {{- if ne .neighbor.LocalASN .routerASN -}}
   neighbor {{.neighbor.Addr}} local-as {{.neighbor.LocalASN}}
   {{- end }}
-  {{ if .neighbor.EBGPMultiHop }}
+  {{- if .neighbor.EBGPMultiHop }}
   neighbor {{.neighbor.Addr}} ebgp-multihop
   {{- end }}
   {{ if .neighbor.Port -}}
