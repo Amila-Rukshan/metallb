@@ -1,6 +1,6 @@
 {{- define "neighborsession"}}
   neighbor {{.neighbor.Addr}} remote-as {{.neighbor.ASN}}
-  {{- if ne .neighbor.LocalASN .routerASN -}}
+  {{ if ne .neighbor.LocalASN .routerASN -}}
   neighbor {{.neighbor.Addr}} local-as {{.neighbor.LocalASN}}
   {{- end }}
   {{- if .neighbor.EBGPMultiHop }}
