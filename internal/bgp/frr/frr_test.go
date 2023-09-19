@@ -51,6 +51,10 @@ func testCompareFiles(t *testing.T, configFile, goldenFile string) {
 	// err can only be a ErrWaitTimeout, as the check function always return nil errors.
 	// So lastError is always set
 	if err != nil {
+		// log the content of configFile
+		t.Log("before cat >>>>")
+		exec.Command("cat", configFile)
+		t.Log("after  cat >>>>")
 		t.Fatalf("failed to compare configfiles %s, %s using poll interval\nlast error: %v", configFile, goldenFile, lastError)
 	}
 }
