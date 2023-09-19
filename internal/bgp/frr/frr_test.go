@@ -848,7 +848,7 @@ func TestTwoAdvertisementsTwoSessions(t *testing.T) {
 				{
 					PeerAddress:   "10.2.2.255:179",
 					SourceAddress: net.ParseIP("10.1.1.254"),
-					MyASN:         100,
+					MyASN:         700,
 					RouterID:      net.ParseIP("10.1.1.254"),
 					PeerASN:       200,
 					HoldTime:      time.Second,
