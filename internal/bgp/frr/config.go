@@ -98,8 +98,8 @@ type advertisementConfig struct {
 
 // routerName() defines the format of the key of the "Routers" map in the
 // frrConfig struct.
-func routerName(srcAddr string, myASN uint32, vrfName string) string {
-	return fmt.Sprintf("%d@%s@%s", myASN, srcAddr, vrfName)
+func routerName(srcAddr string, vrfName string) string {
+	return fmt.Sprintf("%s@%s", srcAddr, vrfName)
 }
 
 // neighborName() defines the format of key of the 'Neighbors' map in the
