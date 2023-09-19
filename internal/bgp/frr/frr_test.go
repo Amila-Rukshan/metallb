@@ -53,7 +53,14 @@ func testCompareFiles(t *testing.T, configFile, goldenFile string) {
 	if err != nil {
 		// log the content of configFile
 		t.Log("before cat >>>>")
-		exec.Command("cat", configFile)
+		// read the configFile file content to a string
+		cmd := exec.Command("cat", configFile)
+		output, err := cmd.Output()
+		if err != nil {
+			t.Fatalf("command %s returned error: %s\n%s", cmd.String(), err, output)
+		}
+		t.Log(string(output))
+
 		t.Log("after  cat >>>>")
 		t.Fatalf("failed to compare configfiles %s, %s using poll interval\nlast error: %v", configFile, goldenFile, lastError)
 	}
