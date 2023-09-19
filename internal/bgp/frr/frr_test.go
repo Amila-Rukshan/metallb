@@ -950,7 +950,7 @@ func TestTwoAdvertisementsTwoSessionsOneWithPeerSelector(t *testing.T) {
 		bgp.SessionParameters{
 			PeerAddress:   "10.2.2.255:179",
 			SourceAddress: net.ParseIP("10.1.1.254"),
-			MyASN:         700,
+			MyASN:         100,
 			RouterID:      net.ParseIP("10.1.1.254"),
 			PeerASN:       200,
 			HoldTime:      time.Second,
